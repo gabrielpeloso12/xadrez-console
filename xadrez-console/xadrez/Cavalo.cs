@@ -3,13 +3,12 @@
 
 namespace xadrez
 {
-    internal class Cavalo : Peca
+    internal class Cavalo 
     {
-        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Cavalo(Tabuleiro tab, Cor cor) 
         {
 
         }
-
         public override string ToString()
         {
             return "C";

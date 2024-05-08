@@ -3,9 +3,9 @@
 
 namespace xadrez
 {
-    internal class Peao : Peca
+    internal class Peao 
     {
-        public Peao(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Peao(Tabuleiro tab, Cor cor) 
         {
 
         }

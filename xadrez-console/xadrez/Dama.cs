@@ -3,9 +3,9 @@
 
 namespace xadrez
 {
-    internal class Dama : Peca
+    internal class Dama 
     {
-        public Dama(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Dama(Tabuleiro tab, Cor cor) 
         {
 
         }

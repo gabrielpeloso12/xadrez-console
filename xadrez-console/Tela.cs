@@ -14,7 +14,7 @@ namespace tabuleiro
 
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    Tela.imprimirPeca(tab.peca(i, j));
+                    imprimirPeca(tab.peca(i, j));
                 }
                 Console.WriteLine();
             }

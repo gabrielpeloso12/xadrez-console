@@ -3,15 +3,15 @@
 
 namespace xadrez
 {
-    internal class Rei : Peca
+    internal class Cavalo : Peca
     {
-        public Rei(Tabuleiro tab, Cor cor, PartidaDeXadrez partida) : base(tab, cor)
+        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
 
         public override string ToString()
         {
-            return "R";
+            return "C";
         }
 
         private bool podeMover(Posicao pos)
@@ -26,57 +26,42 @@ namespace xadrez
 
             Posicao pos = new Posicao(0, 0);
 
-            //Verificando se pode mover a peça para cima 
-            pos.definirValores(posicao.linha - 1, posicao.coluna);
-            if (tab.posicaoValida(pos) && podeMover(pos)) 
-            {
-                mat[pos.linha, pos.coluna] = true;
-            }
-
-            //Verificando se pode mover a peça para canto direito acima "ne" (ex: /)
-            pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+            pos.definirValores(posicao.linha - 1, posicao.coluna - 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
-            //Verificando se pode mover a peça para sua direita
-            pos.definirValores(posicao.linha, posicao.coluna + 1);
+            pos.definirValores(posicao.linha - 2, posicao.coluna - 1);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
-            //Verificando se pode mover a peça para sua direita e linha de baixo "se"
-            pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+            pos.definirValores(posicao.linha - 2, posicao.coluna + 1);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
-            //Verificando se pode mover a peça para baixo
-            pos.definirValores(posicao.linha + 1, posicao.coluna);
+            pos.definirValores(posicao.linha - 1, posicao.coluna + 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
-            //Verificando se pode mover a peça para esquerda linha de baixo "so"
-            pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+            pos.definirValores(posicao.linha + 1, posicao.coluna + 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
-            //Verificando se pode mover a peça para esquerda 
-            pos.definirValores(posicao.linha, posicao.coluna - 1);
+            pos.definirValores(posicao.linha + 2, posicao.coluna + 1);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
-            //Verificando se pode mover a peça para canto esquerdo acima "ne" (ex: \)
-            pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+            pos.definirValores(posicao.linha + 2, posicao.coluna - 1);
+            if (tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.linha, pos.coluna] = true;
+            }
+            pos.definirValores(posicao.linha + 1, posicao.coluna - 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
